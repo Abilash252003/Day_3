@@ -1,0 +1,33 @@
+///100 Days of RTL Challenge///
+
+///Abilash P///
+
+///Ripple Carry Adder///
+
+///4 Bit Adder///
+
+module ripple_carry_adder (a_in, b_in, c_in, sum, carry);
+
+input  [3:0]a_in, b_in;
+
+input  c_in;
+
+output [3:0] sum;
+
+output carry;
+
+wire   [3:1]c;
+
+//For 4 bit adder 4 FA required//
+
+full_adder FA1 (.a_in(a_in[0]), .b_in(b_in[0]), .c_in(c_in), .sum(sum[0]), .carry(c[1]));
+
+full_adder FA2 (.a_in(a_in[1]), .b_in(b_in[1]), .c_in(c[1]), .sum(sum[1]), .carry(c[2]));
+
+full_adder FA3 (.a_in(a_in[2]), .b_in(b_in[2]), .c_in(c[2]), .sum(sum[2]), .carry(c[3]));
+
+full_adder FA4 (.a_in(a_in[3]), .b_in(b_in[3]), .c_in(c[3]), .sum(sum[3]), .carry(carry));
+
+endmodule
+
+   
