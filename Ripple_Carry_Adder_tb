@@ -1,0 +1,54 @@
+///100 Days of RTL Challenge///
+
+///Abilash P///
+
+///Ripple Carry Adder///
+
+///4 Bit Adder///
+
+module ripple_carry_adder_tb();
+
+reg  [3:0]a_in, b_in;
+reg  c_in;
+wire [3:0] sum;
+wire carry;
+
+ripple_carry_adder RCA (.a_in(a_in), .b_in(b_in), .c_in(c_in), .sum(sum), .carry(carry));
+
+integer i;
+
+initial 
+begin
+  a_in = 4'b0000;
+  b_in = 4'b0000;
+  c_in = 0;
+end
+
+
+initial
+begin
+  $display ("A is constant(0000) and B varies from 0000 to 1111");
+  for(i=4'b0000; i<=4'b1111; i=i+1)
+  begin
+       {a_in, b_in} = i;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
+       #20;
+  end
+  $display ("B is constant(0000) and A varies from 0000 to 1111");
+  for(i=4'b0000; i<=4'b1111; i=i+1)
+  begin
+       {b_in, a_in} = i;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
+       #20;
+  end
+  $display ("A various from 0000 to 1111 and B varies from 0000 to 1111");
+  for(i=4'b0000; i<=4'b1111; i=i+1)
+  begin
+       a_in = i;
+       b_in = i;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
+       #20;
+  end
+end
+
+endmodule
