@@ -31,23 +31,23 @@ begin
   for(i=4'b0000; i<=4'b1111; i=i+1)
   begin
        {a_in, b_in} = i;
-       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
        #20;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
   end
   $display ("B is constant(0000) and A varies from 0000 to 1111");
   for(i=4'b0000; i<=4'b1111; i=i+1)
   begin
        {b_in, a_in} = i;
-       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
        #20;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
   end
   $display ("A various from 0000 to 1111 and B varies from 0000 to 1111");
   for(i=4'b0000; i<=4'b1111; i=i+1)
   begin
        a_in = i;
        b_in = i;
-       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
        #20;
+       $display ("Input A = %b----Input B = %b----Input C = %b----Output Sum = %b----Output Carry = %b",a_in,b_in,c_in,sum,carry);
   end
 end
 
